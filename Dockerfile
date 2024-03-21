@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM node:21
 RUN apt-get update && apt-get install git -y && apt-get install imagemagick -y;
 
 WORKDIR /ecs-app
@@ -7,7 +7,7 @@ COPY package*.json ./
 COPY . .
 
 RUN npm install
-RUN chown -R root:root /ecs-app
+RUN chown -R node:node /ecs-app
 
 ENV NODE_ENV=production
 ENV ENV_ECS=true
