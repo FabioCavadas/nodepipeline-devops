@@ -7,7 +7,7 @@ COPY package*.json ./
 COPY . .
 
 RUN npm install
-RUN chown -R node:node /ecs-app
+RUN chown -R root:root /ecs-app
 
 ENV NODE_ENV=production
 ENV ENV_ECS=true
